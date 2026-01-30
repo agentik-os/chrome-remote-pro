@@ -139,18 +139,8 @@ class ProjectManager: ObservableObject {
     // MARK: - Project Management
 
     func createDefaultProjects() {
-        guard !availableChromeProfiles.isEmpty else { return }
-
-        for i in 0..<min(3, availableChromeProfiles.count) {
-            let project = Project(
-                name: "Project \(i + 1)",
-                chromeProfile: availableChromeProfiles[i].name,
-                port: 9222 + i
-            )
-            projects.append(project)
-        }
-
-        saveConfig()
+        // Don't create any default projects
+        // Let users configure their own projects
     }
 
     func addProject() {
@@ -345,9 +335,7 @@ class ProjectManager: ObservableObject {
                 "--remote-debugging-port=\(project.port)",
                 "--user-data-dir=\(chromePath)",
                 "--no-first-run",
-                "--no-default-browser-check",
-                "--disable-features=UserAgentClientHint",
-                "--disable-blink-features=AutomationControlled"
+                "--no-default-browser-check"
             ]
 
             let nullDevice = FileHandle.nullDevice
