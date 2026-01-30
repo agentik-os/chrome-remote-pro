@@ -4,7 +4,14 @@ Control Chrome browsers remotely with Google sessions preserved. Perfect for aut
 
 ![Version](https://img.shields.io/badge/version-2.1.0-blue)
 ![Platform](https://img.shields.io/badge/platform-macOS%2011%2B-lightgrey)
-![License](https://img.shields.io/badge/license-MIT-green)
+![License](https://img.shields.io/badge/license-Proprietary-red)
+[![Support](https://img.shields.io/badge/sponsor-support%20Chrome%20Remote%20Pro-ff69b4)](https://github.com/Agentik-OS/chrome-remote-pro#support)
+
+---
+
+> **⚠️ License Notice:** This software is proprietary. Personal use is permitted. Public forks, redistribution, and commercial use require written permission. See [LICENSE](LICENSE).
+
+---
 
 ## 🚀 Quick Install
 
@@ -172,7 +179,6 @@ automateTask();
 - **SSH keys locally generated** and managed
 - **Localhost tunnels only** (ports not exposed)
 - **No data collection** or tracking
-- **Open source** - verify the code yourself
 
 ## 🛠️ Requirements
 
@@ -228,10 +234,6 @@ A: No! Chrome Remote Pro has one-click SSH key generation and guides you through
 
 Contributions welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) first.
 
-## 📄 License
-
-MIT License - see [LICENSE](LICENSE) for details.
-
 ## 🙏 Credits
 
 Built with:
@@ -240,19 +242,80 @@ Built with:
 - Chrome DevTools Protocol
 - SSH tunneling
 
-## 📞 Support
+## Support
 
-- [GitHub Issues](https://github.com/Agentik-OS/chrome-remote-pro/issues)
-- [Documentation](docs/)
+If Chrome Remote Pro helps you automate faster, consider supporting its development.
+
+<p align="center">
+  <a href="https://paypal.me/garethsimono">
+    <img src="https://img.shields.io/badge/PayPal-Donate-00457C?style=for-the-badge&logo=paypal&logoColor=white" alt="PayPal"/>
+  </a>
+</p>
+
+<p align="center">
+  <sub><strong>PayPal:</strong> simono.gareth@gmail.com</sub>
+</p>
+
+<br/>
+
+<table align="center">
+  <tr>
+    <th>Crypto</th>
+    <th>Network</th>
+    <th>Address</th>
+  </tr>
+  <tr>
+    <td><strong>USDT</strong></td>
+    <td>Arbitrum</td>
+    <td><code>0x8709fd7475780d4caa2c6674b06396c57a0530fa</code></td>
+  </tr>
+  <tr>
+    <td><strong>SOL</strong></td>
+    <td>Solana</td>
+    <td><code>37H9ecXZ2BpWkBEogCcosj6LEBp5uqgBs5fjJgjzNeo7</code></td>
+  </tr>
+  <tr>
+    <td><strong>BTC</strong></td>
+    <td>Bitcoin</td>
+    <td><code>1CVMhkWDBMt5C5WsE8vmY84KSnFCrgPbZL</code></td>
+  </tr>
+</table>
+
+<br/>
+
+<p align="center">
+  <sub>Your support keeps Chrome Remote Pro maintained and improving. Thank you! 🙏</sub>
+</p>
+
+---
+
+## License
+
+**Proprietary License** - see [LICENSE](LICENSE)
+
+| Permitted | Not Permitted |
+|-----------|---------------|
+| ✅ View and study source code | ❌ Public forks or redistribution |
+| ✅ Personal, non-commercial use | ❌ Commercial use without permission |
+| ✅ Private modifications | ❌ Sublicensing |
+
+**Commercial licensing:** x@agentik-os.com
+
+---
 
 ## 🔗 Links
 
 - [Website](https://agentik-os.com)
 - [GitHub](https://github.com/Agentik-OS/chrome-remote-pro)
 - [Releases](https://github.com/Agentik-OS/chrome-remote-pro/releases)
+- [Agentik OS on TAAFT](https://theresanaiforthat.com/@agentik_os/) - More AI tools
 
 ---
 
+<p align="center">
 Made with ❤️ for the automation community
+</p>
 
-**Star ⭐ this repo if you find it useful!**
+<p align="center">
+<strong>Star ⭐ this repo if you find it useful!</strong>
+</p>
