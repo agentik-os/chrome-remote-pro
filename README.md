@@ -1,343 +1,258 @@
 # Chrome Remote Pro
 
-**Control your Chrome browsers remotely with Google sessions preserved!**
+Control Chrome browsers remotely with Google sessions preserved. Perfect for automation, testing, and remote browser management.
 
-Chrome Remote Pro is a macOS menu bar application that allows you to:
-- Launch multiple Chrome instances with different profiles
-- Access them remotely via SSH tunnels
-- Keep all your Google sessions active
-- Control browsers with Puppeteer from a remote VPS
+![Version](https://img.shields.io/badge/version-2.1.0-blue)
+![Platform](https://img.shields.io/badge/platform-macOS%2011%2B-lightgrey)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-Perfect for automation, testing, and managing multiple Google accounts!
+## 🚀 Quick Install
 
----
+### One-Line Install (Recommended)
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Agentik-OS/chrome-remote-pro/main/install.sh | bash
+```
+
+### Manual Install
+
+1. Download [ChromeRemotePro-v2.0.0.dmg](https://github.com/Agentik-OS/chrome-remote-pro/releases/latest)
+2. Open the DMG
+3. Drag **Chrome Remote Pro** to Applications
+4. Launch from Launchpad
 
 ## ✨ Features
 
-- 🚀 **Launch multiple Chrome profiles** - Use up to 10 different Chrome profiles simultaneously
-- 🔐 **Google sessions preserved** - All cookies, passwords, and logins are automatically available
-- 🌐 **Remote access** - Control your browsers from anywhere via SSH tunnels
-- 🤖 **Puppeteer-ready** - Full Chrome DevTools Protocol support
-- 🎨 **Clean dark interface** - Minimalist menu bar app
-- 📊 **Real-time monitoring** - See Chrome, tunnel, and VPS status for each project
-- ⚡ **One-click window opening** - Click port badge to open Chrome windows
-- 🔄 **Auto-reconnect** - Automatically handles IP changes
+### 🖥️ Remote Browser Control
+- Control multiple Chrome instances simultaneously
+- Each project gets its own dedicated Chrome profile
+- Google sessions automatically preserved (no re-login!)
+- Access from anywhere via SSH tunnels
 
----
+### 🔐 Secure SSH Management
+- **One-click SSH key generation** (no terminal needed!)
+- Built-in SSH key manager with copy-paste instructions
+- Test VPS connection before saving
+- Complete troubleshooting guide included
 
-## 🖥️ System Requirements
+### 🤖 Claude Code Integration
+- **Auto-generates setup prompts** with your config
+- Includes VPS IP, projects, SSH instructions
+- One-click copy to clipboard
+- Claude does ALL the VPS setup automatically!
 
-- **macOS 11.0+** (Big Sur or later)
-- **Google Chrome** installed
-- **Xcode Command Line Tools** (for compilation)
-- **SSH access to a VPS** (optional, for remote control)
+### 📊 Real-Time Monitoring
+- Visual status for Chrome, Tunnel, and VPS
+- Color-coded indicators (green/red/orange)
+- Live connection monitoring
+- Automatic reconnection on IP change
 
----
+### 🎨 Clean macOS Design
+- Native SwiftUI interface
+- Menu bar application (no Dock icon)
+- Dark mode optimized
+- Minimal and powerful
 
-## 📦 Installation
+## 🎯 Use Cases
 
-### Quick Install (One Command)
+- **Web Automation**: Run Puppeteer scripts on remote Chrome with your Google sessions
+- **Testing**: Test across multiple Google accounts simultaneously
+- **Remote Work**: Access your Chrome sessions from anywhere
+- **AI Development**: Perfect for Claude Code and AI-powered automation
+- **Multi-Account Management**: Manage multiple Google accounts effortlessly
 
-```bash
-curl -fsSL https://your-website.com/install.sh | bash
-```
+## 📖 How It Works
 
-### Manual Installation
+1. **Launch Chrome Remote Pro** on your Mac
+2. **Add Projects**: Each project = one Chrome profile + one port
+3. **Start Projects**: Chrome launches in debug mode with your Google sessions
+4. **SSH Tunnels**: Automatically created to your VPS
+5. **Remote Control**: Use Puppeteer from your VPS to control your local Chrome!
 
-1. **Download the installer:**
-   ```bash
-   curl -O https://your-website.com/chrome-remote-pro-installer.sh
-   chmod +x chrome-remote-pro-installer.sh
-   ```
+## 🔧 Setup Guide
 
-2. **Run the installer:**
-   ```bash
-   ./chrome-remote-pro-installer.sh
-   ```
-
-3. **Follow the prompts:**
-   - Select how many projects you want
-   - Choose Chrome profiles for each project
-   - Configure VPS settings (optional)
-
-4. **Launch the app:**
-   - Open LaunchPad
-   - Search for "Chrome Remote Pro"
-   - Click to launch
-
----
-
-## 🚀 Quick Start
-
-### 1. Launch the App
-
-Open Chrome Remote Pro from your menu bar (top right corner).
-
-### 2. Configure Projects
-
-The app automatically detects your Chrome profiles. During installation, you'll have configured your projects.
-
-### 3. Start Projects
-
-Click **"Start All"** to launch all your Chrome instances with their profiles.
-
-### 4. Open Chrome Windows
-
-Click the **↗️ port badge** (e.g., ↗️ :9222) to open a Chrome window.
-
-**Result:** Chrome opens with your Google session already active!
-
----
-
-## 📖 Usage Examples
-
-### Example 1: Personal Account (Port 9222)
+### Step 1: Install the App
 
 ```bash
-# In Chrome Remote Pro, click ↗️ :9222
-# Chrome opens with your personal Google account
-# Go to https://mail.google.com
-# You're already logged in!
+curl -fsSL https://raw.githubusercontent.com/Agentik-OS/chrome-remote-pro/main/install.sh | bash
 ```
 
-### Example 2: Work Account (Port 9223)
+Or download the DMG manually.
 
+### Step 2: Configure VPS (Optional)
+
+On first launch, you'll see a setup wizard:
+- **VPS Host**: Your VPS IP (e.g., 192.168.1.100)
+- **SSH Port**: Usually 22 or custom
+- **SSH User**: Your VPS username
+- **SSH Key**: Path to your private key
+
+Or click **"Skip for Now"** to use locally only.
+
+### Step 3: Generate SSH Key
+
+In Settings (⚙️):
+1. Click **"Generate New SSH Key"**
+2. Copy the public key shown
+3. Add it to your VPS:
 ```bash
-# Click ↗️ :9223
-# Chrome opens with your work Google account
-# Access company Gmail, Drive, etc.
-# Everything is ready!
+ssh your-user@your-vps
+echo "[paste your key]" >> ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+```
+4. Test the connection!
+
+### Step 4: Setup VPS with Claude Code
+
+1. Open Settings → **"Generate & Copy Prompt"**
+2. SSH to your VPS and launch Claude Code
+3. Paste the prompt
+4. Claude will automatically:
+   - Install Node.js and Puppeteer
+   - Create test scripts
+   - Setup monitoring tools
+   - Generate examples for each project
+
+### Step 5: Add Projects
+
+1. Click **"Add"** in the app
+2. Name your project (e.g., "Personal Gmail")
+3. Select Chrome profile (your Google sessions are here!)
+4. Choose a port (9222, 9223, etc.)
+5. Click **"Start"**!
+
+## 💻 VPS Setup (Automated)
+
+Chrome Remote Pro generates a **complete Claude Code prompt** that sets up your VPS automatically.
+
+What it creates on your VPS:
+```
+~/chrome-remote-control/
+├── config.json              # Your projects configuration
+├── package.json             # Node dependencies
+├── test-connections.js      # Test all Chrome connections
+├── monitor.sh               # Real-time status monitoring
+├── check-tunnels.sh         # Verify SSH tunnels
+└── scripts/
+    ├── project1/
+    │   ├── example.js       # Puppeteer example
+    │   └── README.md
+    ├── project2/
+    └── ...
 ```
 
-### Example 3: Remote Automation with Puppeteer
+## 📝 Example Puppeteer Script
 
 ```javascript
 const puppeteer = require('puppeteer-core');
 
-// Connect to Chrome on port 9222 (via SSH tunnel)
-const browser = await puppeteer.connect({
-    browserURL: 'http://localhost:9222',
-    defaultViewport: null
-});
+async function automateTask() {
+    const browser = await puppeteer.connect({
+        browserURL: 'http://localhost:9222',
+        defaultViewport: null
+    });
 
-// Your Google session is already active!
-const page = await browser.newPage();
-await page.goto('https://mail.google.com');
+    const pages = await browser.pages();
+    console.log(`Connected! Found ${pages.length} tabs`);
 
-// Automate Gmail, Drive, Calendar, etc.
-// No need to login!
+    const page = await browser.newPage();
+    await page.goto('https://gmail.com');
 
-await browser.disconnect();
-```
+    // Your automation here - Google session is already active!
 
----
-
-## 🔧 Configuration
-
-### Config File Location
-
-```
-~/.chrome_remote_pro_config.json
-```
-
-### Example Configuration
-
-```json
-{
-  "sshKeyPath": "~/.ssh/id_rsa",
-  "sshPort": 22,
-  "sshHost": "your-vps-ip",
-  "sshUser": "your-username",
-  "projects": [
-    {
-      "name": "Personal",
-      "chromeProfile": "Default",
-      "port": 9222
-    },
-    {
-      "name": "Work",
-      "chromeProfile": "Profile 1",
-      "port": 9223
-    }
-  ]
+    await browser.disconnect(); // NEVER use close()!
 }
+
+automateTask();
 ```
 
----
+## 🔒 Security
 
-## 🌐 Remote Access Setup
+- **No VPS hardcoded** in the app
+- **SSH keys locally generated** and managed
+- **Localhost tunnels only** (ports not exposed)
+- **No data collection** or tracking
+- **Open source** - verify the code yourself
 
-### On Your Mac
+## 🛠️ Requirements
 
-1. Launch Chrome Remote Pro
-2. Click "Start All"
-3. Your IP is shown in the app header
+**Mac:**
+- macOS 11.0 or later
+- Google Chrome installed
+- SSH access (for remote features)
 
-### On Your VPS
-
-1. **Install Node.js and Puppeteer:**
-   ```bash
-   curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-   sudo apt-get install -y nodejs
-   npm install puppeteer-core
-   ```
-
-2. **Test connection:**
-   ```bash
-   curl http://localhost:9222/json/version
-   ```
-
-3. **Create automation script:**
-   ```javascript
-   const puppeteer = require('puppeteer-core');
-
-   const browser = await puppeteer.connect({
-       browserURL: 'http://localhost:9222'
-   });
-
-   // Your automation here!
-   ```
-
----
-
-## 🎨 Interface
-
-### Header
-
-```
-🔘 Chrome Remote Pro              🔄
-    5 projects
-
-🌐 Local IP: 192.168.1.45    VPS: 72.61.197.216
-```
-
-- **🔄 Refresh:** Click to refresh status or reconnect VPS
-
-### Project Card
-
-```
-┌─────────────────────────────────────────────┐
-│ 🟢 Personal               ↗️ :9222    ▶️   │
-│ your.email@gmail.com                        │
-│ Chrome 🟢 | Tunnel 🟢 | VPS 🟢             │
-└─────────────────────────────────────────────┘
-```
-
-- **Status Dot (🟢/🔴/🟠):** Overall project status
-- **Port Badge (↗️ :9222):** Click to open Chrome window
-- **Play Button (▶️):** Start/stop project
-- **Status Bar:** Chrome, Tunnel, and VPS status
-
----
-
-## 🔍 Troubleshooting
-
-### Problem: "Profile is locked"
-
-**Cause:** Chrome normal is using the profile
-
-**Solution:**
-```bash
-# Close Chrome completely (Cmd+Q)
-# Then launch projects in Chrome Remote Pro
-```
-
-The app automatically closes Chrome normal when you click "Start All".
-
-### Problem: Sessions not synchronized
-
-**Cause:** Chrome profiles not accessible
-
-**Solution:**
-1. Stop all projects
-2. Close Chrome normal completely
-3. Click "Start All" again
-
-### Problem: Can't open Chrome window
-
-**Cause:** Project not running
-
-**Solution:**
-1. Check if project status is green (🟢)
-2. If red, click ▶️ to start
-3. Wait 5 seconds
-4. Click ↗️ port badge again
-
----
+**VPS (Optional):**
+- Linux server with SSH access
+- Node.js 20+ (auto-installed by Claude Code)
+- Puppeteer-core (auto-installed)
 
 ## 📚 Documentation
 
-- [Installation Guide](https://your-website.com/docs/installation)
-- [Configuration Guide](https://your-website.com/docs/configuration)
-- [VPS Setup](https://your-website.com/docs/vps-setup)
-- [Puppeteer Examples](https://your-website.com/docs/puppeteer)
-- [Troubleshooting](https://your-website.com/docs/troubleshooting)
+- [VPS Setup Guide](docs/VPS_SETUP_GUIDE.md) - Complete VPS configuration
+- [Chrome Sessions Guide](docs/CHROME_SESSIONS_GUIDE.md) - Understanding Chrome profiles
+- [Claude Code Integration](docs/CLAUDE_AI_INTEGRATION.md) - AI-powered automation
 
----
+## ❓ FAQ
+
+**Q: Do I need a VPS?**
+A: No! You can use Chrome Remote Pro locally only. VPS is for remote access.
+
+**Q: Will my Google sessions stay logged in?**
+A: Yes! Chrome Remote Pro uses your actual Chrome profiles, so all sessions are preserved.
+
+**Q: Can I use this for multiple Google accounts?**
+A: Yes! Each project can use a different Chrome profile with different Google accounts.
+
+**Q: Is this safe?**
+A: Yes. All connections are SSH tunnels (localhost only), and your data never leaves your machine except through your encrypted SSH connection.
+
+**Q: Do I need to know SSH/Terminal commands?**
+A: No! Chrome Remote Pro has one-click SSH key generation and guides you through everything.
+
+## 🐛 Troubleshooting
+
+**Chrome won't start:**
+- Make sure normal Chrome is closed first
+- Chrome can only use one profile at a time
+
+**Connection failed:**
+- Test your VPS connection in Settings
+- Verify SSH key is added to VPS
+- Check VPS IP and port
+
+**Google sessions not preserved:**
+- Make sure you selected the correct Chrome profile
+- Don't use "Guest" or "Profile 0" (they reset)
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
+Contributions welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) first.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License - see [LICENSE](LICENSE) for details.
+
+## 🙏 Credits
+
+Built with:
+- SwiftUI (macOS native interface)
+- Puppeteer (browser automation)
+- Chrome DevTools Protocol
+- SSH tunneling
+
+## 📞 Support
+
+- [GitHub Issues](https://github.com/Agentik-OS/chrome-remote-pro/issues)
+- [Documentation](docs/)
+
+## 🔗 Links
+
+- [Website](https://agentik-os.com)
+- [GitHub](https://github.com/Agentik-OS/chrome-remote-pro)
+- [Releases](https://github.com/Agentik-OS/chrome-remote-pro/releases)
 
 ---
 
-## ⚠️ Disclaimer
+Made with ❤️ for the automation community
 
-This tool is for legitimate automation purposes only. Always respect:
-- Terms of Service of websites you automate
-- Google's Terms of Service
-- Privacy and security best practices
-
-Use responsibly and at your own risk.
-
----
-
-## 🙏 Acknowledgments
-
-- Built with SwiftUI and AppKit
-- Uses Chrome DevTools Protocol
-- Inspired by browser automation needs
-
----
-
-## 💬 Support
-
-- 📧 Email: support@your-website.com
-- 🐦 Twitter: [@yourusername](https://twitter.com/yourusername)
-- 💬 Discord: [Join our server](https://discord.gg/yourserver)
-- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/chrome-remote-pro/issues)
-
----
-
-## 🗺️ Roadmap
-
-- [ ] Support for multiple VPS endpoints
-- [ ] Built-in Puppeteer script editor
-- [ ] Chrome extension sync
-- [ ] Scheduled automation tasks
-- [ ] Dashboard web interface
-- [ ] Windows support (future)
-
----
-
-## ⭐ Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/chrome-remote-pro&type=Date)](https://star-history.com/#yourusername/chrome-remote-pro&Date)
-
----
-
-**Made with ❤️ for browser automation enthusiasts**
-
-🚀 **[Get Started Now](https://your-website.com/install)** 🚀
+**Star ⭐ this repo if you find it useful!**
