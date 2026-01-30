@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrome Remote Pro - Control Chrome Browsers Remotely</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 60px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .tagline {
+            font-size: 1.5em;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #fff;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2em;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background: #111;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature {
+            background: #1a1a1a;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #333;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        /* Installation */
+        .installation {
+            padding: 80px 0;
+            background: #000;
+        }
+
+        .install-box {
+            background: #1a1a1a;
+            border: 2px solid #333;
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        .install-command {
+            background: #000;
+            color: #0f0;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+            margin: 20px 0;
+            border: 1px solid #333;
+            overflow-x: auto;
+        }
+
+        .install-steps {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .install-steps li {
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .install-steps li:last-child {
+            border-bottom: none;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #667eea;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        /* Demo */
+        .demo {
+            padding: 80px 0;
+            background: #111;
+            text-align: center;
+        }
+
+        .demo-video {
+            max-width: 800px;
+            margin: 40px auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .demo-screenshot {
+            width: 100%;
+            border-radius: 15px;
+            border: 2px solid #333;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0;
+            background: #000;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #764ba2;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .tagline {
+                font-size: 1.2em;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            opacity: 0.7;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>🚀 Chrome Remote Pro</h1>
+            <p class="tagline">Control your Chrome browsers remotely with Google sessions preserved</p>
+            <a href="#install" class="cta-button">Get Started - It's Free!</a>
+        </div>
+    </header>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Chrome Remote Pro?</h2>
+            <p class="subtitle">The ultimate tool for browser automation and remote control</p>
+
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Sessions Preserved</h3>
+                    <p>All your Google logins, cookies, and passwords are automatically available. No need to re-login!</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Remote Access</h3>
+                    <p>Control your browsers from anywhere via SSH tunnels. Perfect for VPS automation.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Puppeteer Ready</h3>
+                    <p>Full Chrome DevTools Protocol support. Use Puppeteer to automate anything!</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Multiple Profiles</h3>
+                    <p>Run up to 10 different Chrome profiles simultaneously. Separate work and personal accounts.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Clean Interface</h3>
+                    <p>Minimalist dark menu bar app. See status at a glance.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Auto-Reconnect</h3>
+                    <p>Handles IP changes automatically. Just click reconnect!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation -->
+    <section class="installation" id="install">
+        <div class="container">
+            <h2>Installation</h2>
+            <p class="subtitle">Get up and running in under 5 minutes</p>
+
+            <div class="install-box">
+                <h3>One-Command Install</h3>
+                <div class="install-command">
+                    $ curl -fsSL https://your-website.com/install.sh | bash
+                </div>
+
+                <ul class="install-steps">
+                    <li>
+                        <span class="step-number">1</span>
+                        <strong>Run the installer</strong> - The script will detect your Chrome profiles
+                    </li>
+                    <li>
+                        <span class="step-number">2</span>
+                        <strong>Configure projects</strong> - Choose which profiles to use
+                    </li>
+                    <li>
+                        <span class="step-number">3</span>
+                        <strong>Launch the app</strong> - Find it in LaunchPad or menu bar
+                    </li>
+                    <li>
+                        <span class="step-number">4</span>
+                        <strong>Start automating!</strong> - Click "Start All" and you're ready
+                    </li>
+                </ul>
+            </div>
+
+            <div class="install-box" style="margin-top: 40px;">
+                <h3>Manual Installation</h3>
+                <div class="install-command">
+                    $ curl -O https://your-website.com/chrome-remote-pro-installer.sh<br>
+                    $ chmod +x chrome-remote-pro-installer.sh<br>
+                    $ ./chrome-remote-pro-installer.sh
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo -->
+    <section class="demo">
+        <div class="container">
+            <h2>See It In Action</h2>
+            <p class="subtitle">Control multiple Chrome browsers with preserved Google sessions</p>
+
+            <div class="demo-video">
+                <!-- Add a screenshot or GIF here -->
+                <img src="chrome-remote-pro-screenshot.png" alt="Chrome Remote Pro Interface" class="demo-screenshot"
+                     onerror="this.style.display='none'">
+            </div>
+
+            <div style="margin-top: 60px;">
+                <h3 style="margin-bottom: 30px;">Example: Remote Automation</h3>
+                <div class="install-command" style="text-align: left; max-width: 700px; margin: 0 auto;">
+const puppeteer = require('puppeteer-core');<br><br>
+
+// Connect to Chrome (your Google session is already active!)<br>
+const browser = await puppeteer.connect({<br>
+&nbsp;&nbsp;browserURL: 'http://localhost:9222'<br>
+});<br><br>
+
+const page = await browser.newPage();<br>
+await page.goto('https://mail.gmail.com');<br><br>
+
+// You're already logged in! Automate Gmail, Drive, etc.<br>
+// No login required! 🎉
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Chrome Remote Pro. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#install">Download</a>
+                <a href="https://github.com/yourusername/chrome-remote-pro">GitHub</a>
+                <a href="docs/">Documentation</a>
+                <a href="mailto:support@your-website.com">Support</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
