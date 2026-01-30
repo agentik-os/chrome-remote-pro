@@ -5,7 +5,80 @@ Control Chrome browsers remotely with Google sessions preserved. Perfect for aut
 ![Version](https://img.shields.io/badge/version-2.1.0-blue)
 ![Platform](https://img.shields.io/badge/platform-macOS%2011%2B-lightgrey)
 ![License](https://img.shields.io/badge/license-Proprietary-red)
-[![Support](https://img.shields.io/badge/sponsor-support%20Chrome%20Remote%20Pro-ff69b4)](https://github.com/Agentik-OS/chrome-remote-pro#support)
+[![Discord](https://img.shields.io/badge/Discord-Join%20Community-5865F2?style=flat&logo=discord&logoColor=white)](https://discord.gg/Gexteuyg4C)
+[![Support](https://img.shields.io/badge/sponsor-support%20us-ff69b4)](https://github.com/Agentik-OS/chrome-remote-pro#-support--donate)
+
+---
+
+## 💖 Support & Donate
+
+<p align="center">
+  <strong>Love Chrome Remote Pro? You're awesome! 🎉</strong>
+</p>
+
+<p align="center">
+  Your support means the world to us and keeps this project alive.<br/>
+  Every donation, big or small, helps us build better tools for the community.<br/>
+  <strong>Thank you for being part of this journey! 🙏</strong>
+</p>
+
+<p align="center">
+  <a href="https://paypal.me/garethsimono">
+    <img src="https://img.shields.io/badge/PayPal-Donate-00457C?style=for-the-badge&logo=paypal&logoColor=white" alt="PayPal"/>
+  </a>
+</p>
+
+<p align="center">
+  <sub><strong>PayPal:</strong> simono.gareth@gmail.com</sub>
+</p>
+
+<br/>
+
+<table align="center">
+  <tr>
+    <th>Crypto</th>
+    <th>Network</th>
+    <th>Address</th>
+  </tr>
+  <tr>
+    <td><strong>USDT</strong></td>
+    <td>Arbitrum</td>
+    <td><code>0x8709fd7475780d4caa2c6674b06396c57a0530fa</code></td>
+  </tr>
+  <tr>
+    <td><strong>SOL</strong></td>
+    <td>Solana</td>
+    <td><code>37H9ecXZ2BpWkBEogCcosj6LEBp5uqgBs5fjJgjzNeo7</code></td>
+  </tr>
+  <tr>
+    <td><strong>BTC</strong></td>
+    <td>Bitcoin</td>
+    <td><code>1CVMhkWDBMt5C5WsE8vmY84KSnFCrgPbZL</code></td>
+  </tr>
+</table>
+
+---
+
+## 🌐 Join Our Community
+
+<p align="center">
+  <a href="https://discord.gg/Gexteuyg4C">
+    <img src="https://img.shields.io/badge/Discord-Join%20the%20Agentik%20OS%20Community-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord"/>
+  </a>
+</p>
+
+<p align="center">
+  Connect with other users, get help, share your automations, and stay updated!<br/>
+  We'd love to have you! 💜
+</p>
+
+---
+
+## 🤝 Contributing
+
+**Contributions are welcome and encouraged!** 🎊
+
+Whether it's bug fixes, new features, documentation improvements, or just ideas — we appreciate all contributions. Check out our [CONTRIBUTING.md](CONTRIBUTING.md) to get started.
 
 ---
 
@@ -230,10 +303,6 @@ A: No! Chrome Remote Pro has one-click SSH key generation and guides you through
 - Make sure you selected the correct Chrome profile
 - Don't use "Guest" or "Profile 0" (they reset)
 
-## 🤝 Contributing
-
-Contributions welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) first.
-
 ## 🙏 Credits
 
 Built with:
@@ -241,51 +310,6 @@ Built with:
 - Puppeteer (browser automation)
 - Chrome DevTools Protocol
 - SSH tunneling
-
-## Support
-
-If Chrome Remote Pro helps you automate faster, consider supporting its development.
-
-<p align="center">
-  <a href="https://paypal.me/garethsimono">
-    <img src="https://img.shields.io/badge/PayPal-Donate-00457C?style=for-the-badge&logo=paypal&logoColor=white" alt="PayPal"/>
-  </a>
-</p>
-
-<p align="center">
-  <sub><strong>PayPal:</strong> simono.gareth@gmail.com</sub>
-</p>
-
-<br/>
-
-<table align="center">
-  <tr>
-    <th>Crypto</th>
-    <th>Network</th>
-    <th>Address</th>
-  </tr>
-  <tr>
-    <td><strong>USDT</strong></td>
-    <td>Arbitrum</td>
-    <td><code>0x8709fd7475780d4caa2c6674b06396c57a0530fa</code></td>
-  </tr>
-  <tr>
-    <td><strong>SOL</strong></td>
-    <td>Solana</td>
-    <td><code>37H9ecXZ2BpWkBEogCcosj6LEBp5uqgBs5fjJgjzNeo7</code></td>
-  </tr>
-  <tr>
-    <td><strong>BTC</strong></td>
-    <td>Bitcoin</td>
-    <td><code>1CVMhkWDBMt5C5WsE8vmY84KSnFCrgPbZL</code></td>
-  </tr>
-</table>
-
-<br/>
-
-<p align="center">
-  <sub>Your support keeps Chrome Remote Pro maintained and improving. Thank you! 🙏</sub>
-</p>
 
 ---
 
@@ -305,6 +329,7 @@ If Chrome Remote Pro helps you automate faster, consider supporting its developm
 
 ## 🔗 Links
 
+- [Discord Community](https://discord.gg/Gexteuyg4C) - Join us!
 - [Website](https://agentik-os.com)
 - [GitHub](https://github.com/Agentik-OS/chrome-remote-pro)
 - [Releases](https://github.com/Agentik-OS/chrome-remote-pro/releases)
