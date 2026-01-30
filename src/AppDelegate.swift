@@ -1,5 +1,6 @@
 import SwiftUI
 import AppKit
+import ServiceManagement
 
 @main
 struct ChromeRemoteProApp: App {
@@ -40,6 +41,54 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self?.updateMenuBarIcon(status: status)
         }
         manager.startMonitoring()
+
+        // Setup launch at login
+        setupLaunchAtLogin()
+
+        // Auto-start all projects if enabled
+        if manager.config.autoStartProjects {
+            // Wait 5 seconds to let the app fully load
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { [weak self] in
+                self?.manager.startAllProjects()
+            }
+        }
+    }
+
+    func setupLaunchAtLogin() {
+        let launchAtLogin = manager.config.launchAtLogin
+
+        if #available(macOS 13.0, *) {
+            // Modern API for macOS 13+
+            if launchAtLogin {
+                try? SMAppService.mainApp.register()
+            } else {
+                try? SMAppService.mainApp.unregister()
+            }
+        } else {
+            // Legacy method for older macOS
+            setLaunchAtLoginLegacy(enabled: launchAtLogin)
+        }
+    }
+
+    func setLaunchAtLoginLegacy(enabled: Bool) {
+        let bundleIdentifier = Bundle.main.bundleIdentifier ?? "com.agentik.ChromeRemotePro"
+
+        if enabled {
+            // Add to login items via AppleScript
+            let script = """
+            tell application "System Events"
+                make login item at end with properties {path:"/Users/\(NSUserName())/Applications/Chrome Remote Pro.app", hidden:false}
+            end tell
+            """
+
+            if let appleScript = NSAppleScript(source: script) {
+                var error: NSDictionary?
+                appleScript.executeAndReturnError(&error)
+                if let error = error {
+                    print("Failed to add login item: \(error)")
+                }
+            }
+        }
     }
 
     @objc func togglePopover() {

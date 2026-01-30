@@ -4,6 +4,8 @@ struct ContentView: View {
     @StateObject private var manager = ProjectManager.shared
     @State private var showingAddProject = false
     @State private var selectedProject: Project?
+    @State private var showingFirstRun = false
+    @State private var showingSettings = false
 
     var body: some View {
         ZStack {
@@ -13,7 +15,7 @@ struct ContentView: View {
 
             VStack(spacing: 0) {
                 // Header
-                HeaderView()
+                HeaderView(showingSettings: $showingSettings)
 
                 Divider()
                     .background(Color.white.opacity(0.15))
@@ -68,6 +70,25 @@ struct ContentView: View {
             EditProjectView(project: project)
                 .preferredColorScheme(.dark)
         }
+        .sheet(isPresented: $showingFirstRun) {
+            FirstRunView()
+                .preferredColorScheme(.dark)
+        }
+        .sheet(isPresented: $showingSettings) {
+            SettingsView()
+                .preferredColorScheme(.dark)
+        }
+        .onAppear {
+            // Show first run if VPS not configured
+            if manager.config.sshHost == "localhost" || manager.config.sshHost.isEmpty {
+                // Check if this is truly first run (no projects configured)
+                if manager.projects.isEmpty || manager.projects.allSatisfy({ $0.name.hasPrefix("Project") }) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        showingFirstRun = true
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -75,6 +96,7 @@ struct ContentView: View {
 
 struct HeaderView: View {
     @StateObject private var manager = ProjectManager.shared
+    @Binding var showingSettings: Bool
 
     var body: some View {
         VStack(spacing: 0) {
@@ -101,6 +123,19 @@ struct HeaderView: View {
                 }
 
                 Spacer()
+
+                // Settings button
+                Button(action: { showingSettings = true }) {
+                    Image(systemName: "gearshape.fill")
+                        .font(.system(size: 11, weight: .medium))
+                        .foregroundColor(.white)
+                        .frame(width: 26, height: 26)
+                        .background(
+                            Circle()
+                                .fill(Color.white.opacity(0.1))
+                        )
+                }
+                .buttonStyle(.plain)
 
                 // Single Refresh button with menu
                 Menu {
