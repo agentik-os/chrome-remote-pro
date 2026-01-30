@@ -27,7 +27,7 @@ echo "📥 Downloading Chrome Remote Pro..."
 echo ""
 
 # Download latest DMG
-DOWNLOAD_URL="https://github.com/Agentik-OS/chrome-remote-pro/releases/download/v2.1.1/ChromeRemotePro-v2.1.1.dmg"
+DOWNLOAD_URL="https://github.com/Agentik-OS/chrome-remote-pro/releases/download/v2.1.2/ChromeRemotePro-v2.1.2.dmg"
 TMP_DMG="/tmp/ChromeRemotePro.dmg"
 
 # Try to download
@@ -35,7 +35,7 @@ if ! curl -fsSL "$DOWNLOAD_URL" -o "$TMP_DMG" 2>/dev/null; then
     echo "❌ Failed to download. Trying alternative method..."
 
     # Fallback: Use previous version
-    DOWNLOAD_URL="https://github.com/Agentik-OS/chrome-remote-pro/releases/download/v2.1.0/ChromeRemotePro-v2.0.0.dmg"
+    DOWNLOAD_URL="https://github.com/Agentik-OS/chrome-remote-pro/releases/download/v2.1.1/ChromeRemotePro-v2.1.1.dmg"
 
     if ! curl -fsSL "$DOWNLOAD_URL" -o "$TMP_DMG"; then
         echo "❌ Download failed. Please check:"
